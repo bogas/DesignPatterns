@@ -1,1 +1,4 @@
 cmake-*
+.vscode*
+Builder*
+build*
