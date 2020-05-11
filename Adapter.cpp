@@ -2,10 +2,15 @@
 #include "testing.h"
 using namespace std;
 
-struct Square {
-    int side{0};
+struct Length {
+    explicit Length(int l) : size(l) {}
 
-    explicit Square(const int side) : side(side) {}
+    const string a = "da";
+    int size;
+};
+struct Square {
+    Length side{0};
+    explicit Square(const Length side) : side(side) {}
 };
 
 class MyRectangle {
@@ -22,7 +27,7 @@ public:
 };
 
 struct SquareToRectangleAdapter : MyRectangle {
-    SquareToRectangleAdapter(const Square &square) : side(square.side) {
+    SquareToRectangleAdapter(const Square &square) : side(square.side.size) {
     }
 
     int width() const override {
@@ -39,9 +44,9 @@ private:
 };
 
 TEST_CASE("", "") {
-    Square sq{13};
+    Square sq{Length{10}};
     unique_ptr<MyRectangle> adapter = make_unique<SquareToRectangleAdapter>(sq);
-    REQUIRE(adapter->area() == 169);
+    REQUIRE(adapter->area() == 100);
 }
 
 

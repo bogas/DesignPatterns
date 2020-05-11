@@ -3,5 +3,5 @@ project(DesignPatterns)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(DesignPatterns Adapter.cpp common_design.h testing.h)
+add_executable(DesignPatterns common_design.h crtp.cpp)
 target_link_libraries(DesignPatterns)
