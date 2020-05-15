@@ -12,5 +12,6 @@
 #include <mutex>
 #include <exception>
 #include <string_view>
+#include <unordered_set>
 
 using namespace std;

@@ -3,5 +3,5 @@ project(DesignPatterns)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(DesignPatterns common_design.h Features/STLs.cpp)
+add_executable(DesignPatterns common_design.h Algo/BubbleSort.cpp)
 target_link_libraries(DesignPatterns)
