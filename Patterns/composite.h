@@ -1,4 +1,4 @@
-#include "common_design.h"
+#include "../common_design.h"
 
 
 struct ContainsIntegers

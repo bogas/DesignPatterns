@@ -11,26 +11,35 @@ LinkedList &LinkedList::insertBack(int elem) {
     return *this;
 }
 
-LinkedList &LinkedList::insertN(int elem, int position) {
+LinkedList &LinkedList::insertN(int elem, size_t position) {
     auto currentPosition = 0;
     auto newElement = new ListNode(elem);
     auto p = head;
-    if (head == tail or position = 0)
+    if (head == nullptr)
     {
-
+        head = newElement;
+        tail= newElement;
+        return *this;
     }
-    while (currentPosition != position) {
+    if (position == 0)
+    {
+        auto oldHead = head;
+        head = newElement;
+        newElement->next = oldHead;
+        return *this;
+    }
+    while (++currentPosition < position) {
         if (p->next == nullptr) {
             p->next = newElement;
             tail = p->next;
             return *this;
         }
         p = p->next;
-        currentPosition++;
     }
     auto secondPart = p->next;
     p->next = newElement;
     newElement->next = secondPart;
+    return *this;
 }
 
 int LinkedList::popFirst() {
@@ -54,7 +63,7 @@ ListNode::ListNode(int value) : value(value) {}
 
 int main() {
     LinkedList list;
-    list.insertBack(1).insertBack(3).insertBack(7);
+    list.insertBack(1).insertBack(3).insertBack(7).insertN(777,0);
     cout << list << endl;
     return 0;
 }

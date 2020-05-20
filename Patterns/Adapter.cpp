@@ -1,5 +1,5 @@
-#include "common_design.h"
-#include "testing.h"
+#include "../common_design.h"
+#include "../testing.h"
 using namespace std;
 
 struct Length {

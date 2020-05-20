@@ -12,7 +12,7 @@ struct LinkedList {
     ListNode* head = nullptr;
     ListNode* tail = nullptr;
     LinkedList& insertBack(int elem);
-    LinkedList& insertN(int elem, int position);
+    LinkedList& insertN(int elem, std::size_t position);
     int popFirst();
 
     friend ostream &operator<<(ostream &os, const LinkedList &linkedList);
