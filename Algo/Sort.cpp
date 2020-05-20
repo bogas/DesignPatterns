@@ -23,14 +23,20 @@ void bubble(vector<int>& input) {
         }
     }
 }
+vector<int> insertSort(vector<int>& input)
+{
+    list<int> result;
+    for(auto i = 0; i< input.size(); i++)
+    {
+        auto insertPlace = begin(result);
+        for(auto& it = insertPlace; it != result.end(); it++)
+        {
+            auto next = it;
+            next++;
+            if( *it < *next)
+                break;
+        }
 
-int main() {
-    auto v = buildData(30);
-    print(v);
-    bubble(v);
-    print(v);
-
-    return 0;
-
+    }
 }
 
